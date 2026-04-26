@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DigitalTwinChat } from "@/components/DigitalTwinChat";
 import styles from "./page.module.css";
 
 const metrics = [
@@ -132,6 +133,7 @@ export default function Home() {
           <a href="#journey">发展历程</a>
           <a href="#projects">项目亮点</a>
           <a href="#capabilities">能力矩阵</a>
+          <a href="#digital-twin">数字分身</a>
           <Link href="/portfolio">作品集</Link>
         </nav>
       </header>
@@ -290,6 +292,18 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section id="digital-twin" className={styles.section}>
+          <div className={styles.sectionHeading}>
+            <p className={styles.sectionEyebrow}>Digital Twin</p>
+            <h2>现在，你可以直接和这个站点里的 AI 分身对话。</h2>
+            <p>
+              它会基于黄若杰的教育背景、职业经历、研究路径、项目实践与能力结构，回答访问者关于“他是谁、做过什么、适合什么方向”的问题。
+            </p>
+          </div>
+
+          <DigitalTwinChat />
         </section>
 
         <section className={styles.portfolioSection}>
