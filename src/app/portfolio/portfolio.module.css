@@ -7,13 +7,12 @@
   width: min(980px, 100%);
   margin: 0 auto;
   padding: clamp(2rem, 4vw, 4rem);
-  border: 1px solid rgb(9 20 32 / 0.08);
+  border: 1px solid var(--glass-border);
   border-radius: 2rem;
-  background:
-    linear-gradient(145deg, rgb(10 26 44 / 0.98), rgb(6 17 32 / 0.98)),
-    linear-gradient(180deg, rgb(255 255 255 / 0.06), transparent);
-  color: white;
-  box-shadow: 0 32px 80px rgb(7 17 31 / 0.16);
+  background: var(--glass-fill-strong);
+  backdrop-filter: var(--glass-blur);
+  color: var(--ink);
+  box-shadow: var(--glass-glow);
 }
 
 .eyebrow {
@@ -49,9 +48,9 @@
 
 .statusGrid article {
   padding: 1.35rem;
-  border: 1px solid rgb(255 255 255 / 0.1);
+  border: 1px solid var(--glass-border);
   border-radius: 1.25rem;
-  background: rgb(255 255 255 / 0.04);
+  background: var(--glass-fill-sunken);
 }
 
 .statusGrid span {

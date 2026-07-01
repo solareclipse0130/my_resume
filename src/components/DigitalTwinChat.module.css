@@ -35,9 +35,10 @@
 
 .meta span,
 .suggestion {
-  border: 1px solid rgb(9 20 32 / 0.1);
+  border: 1px solid var(--glass-border);
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.46);
+  background: var(--glass-fill);
+  backdrop-filter: var(--glass-blur);
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
@@ -72,8 +73,8 @@
 
 .suggestion:hover:enabled {
   transform: translateY(-2px);
-  border-color: rgb(67 188 255 / 0.36);
-  background: rgb(255 255 255 / 0.82);
+  border-color: rgb(124 245 208 / 0.4);
+  background: var(--glass-fill-strong);
 }
 
 .viewport {
@@ -82,11 +83,12 @@
   max-height: 32rem;
   padding: 1rem;
   overflow-y: auto;
-  border: 1px solid rgb(9 20 32 / 0.08);
+  border: 1px solid var(--glass-border);
   border-radius: 1.5rem;
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.58), rgb(255 255 255 / 0.3)),
-    linear-gradient(145deg, rgb(116 227 255 / 0.08), transparent 60%);
+    linear-gradient(180deg, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0.02)),
+    linear-gradient(145deg, rgb(124 245 208 / 0.05), transparent 60%);
+  backdrop-filter: var(--glass-blur);
 }
 
 .assistantBubble,
@@ -100,14 +102,16 @@
 
 .assistantBubble {
   justify-self: start;
-  border: 1px solid rgb(9 20 32 / 0.08);
-  background: rgb(255 255 255 / 0.84);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-fill);
+  backdrop-filter: var(--glass-blur);
 }
 
 .userBubble {
   justify-self: end;
-  border: 1px solid rgb(67 188 255 / 0.24);
-  background: linear-gradient(145deg, rgb(10 26 44 / 0.96), rgb(7 17 31 / 0.98));
+  border: 1px solid rgb(124 245 208 / 0.3);
+  background: rgb(124 245 208 / 0.1);
+  backdrop-filter: var(--glass-blur);
 }
 
 .role {
@@ -144,17 +148,22 @@
   resize: vertical;
   min-height: 7rem;
   padding: 1rem 1rem 1.05rem;
-  border: 1px solid rgb(9 20 32 / 0.1);
+  border: 1px solid var(--glass-border);
   border-radius: 1.25rem;
-  background: rgb(255 255 255 / 0.7);
+  background: var(--glass-fill-sunken);
+  backdrop-filter: var(--glass-blur);
   color: var(--ink);
   font: inherit;
   outline: none;
 }
 
+.composer textarea::placeholder {
+  color: var(--dim);
+}
+
 .composer textarea:focus {
-  border-color: rgb(67 188 255 / 0.4);
-  box-shadow: 0 0 0 4px rgb(67 188 255 / 0.12);
+  border-color: rgb(124 245 208 / 0.5);
+  box-shadow: 0 0 0 4px rgb(124 245 208 / 0.15);
 }
 
 .footer {
@@ -191,7 +200,7 @@
 }
 
 .error {
-  color: #a03030;
+  color: #ff9b9b;
   font-size: 0.94rem;
 }
 
@@ -242,7 +251,7 @@
 .markdown code {
   padding: 0.15rem 0.35rem;
   border-radius: 0.42rem;
-  background: rgb(9 20 32 / 0.08);
+  background: rgb(255 255 255 / 0.1);
   font-size: 0.94em;
 }
 
@@ -261,7 +270,7 @@
 
 .markdown blockquote {
   padding-left: 0.9rem;
-  border-left: 3px solid rgb(67 188 255 / 0.38);
+  border-left: 3px solid rgb(124 245 208 / 0.45);
   color: var(--muted);
 }
 
@@ -273,7 +282,7 @@
 .markdown th,
 .markdown td {
   padding: 0.55rem 0.6rem;
-  border: 1px solid rgb(9 20 32 / 0.1);
+  border: 1px solid var(--glass-border);
   text-align: left;
 }
 
@@ -282,12 +291,12 @@
 }
 
 .userBubble .markdown a {
-  color: rgb(133 231 255);
+  color: var(--brand);
 }
 
 .userBubble .markdown blockquote {
   color: rgb(214 228 238 / 0.82);
-  border-left-color: rgb(116 227 255 / 0.5);
+  border-left-color: rgb(124 245 208 / 0.5);
 }
 
 @media (width <= 760px) {
