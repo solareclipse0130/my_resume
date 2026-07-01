@@ -13,14 +13,14 @@ type Message = {
 const INITIAL_MESSAGE: Message = {
   role: "assistant",
   content:
-    "你好，我是黄若杰的 Digital Twin。你可以直接问我他的职业路径、研究方向、项目经历、技能结构，或者为什么他会从设计走向心理学与 AI 应用。",
+    "你好，我是黄若杰的 Digital Twin。他是一位 AI 产品实习生（心理学 / 计算神经方向硕士在读），做过 4 个 AI Agent 项目——1 段真实职场落地、1 个已上线产品、2 个获奖作品。你可以直接问我这些项目、他适合的岗位，或他心理学背景与 Agent 工程怎么结合。",
 };
 
 const SUGGESTIONS = [
-  "他的职业路径为什么会从设计转向心理学与 AI？",
-  "他现在最适合申请什么类型的岗位或合作机会？",
-  "请总结一下他的研究能力和技术能力是怎么结合的。",
-  "他在 EEG、数据分析和 AI 工具方面分别有哪些积累？",
+  "他做过哪些 AI 产品？挑一个讲讲。",
+  "他现在最适合什么类型的 AI 产品岗位？",
+  "心理学背景怎么帮到他做 AI 产品？",
+  "他说自己是 vibe-coder，能力边界具体在哪？",
 ];
 
 export function DigitalTwinChat() {
@@ -31,12 +31,18 @@ export function DigitalTwinChat() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
   const messagesRef = useRef<Message[]>([INITIAL_MESSAGE]);
+  const abortRef = useRef<AbortController | null>(null);
 
   const canSend = input.trim().length > 0 && !isLoading;
 
   useEffect(() => {
     messagesRef.current = messages;
   }, [messages]);
+
+  // 组件卸载时取消进行中的请求，避免在已卸载组件上更新状态。
+  useEffect(() => {
+    return () => abortRef.current?.abort();
+  }, []);
 
   function scrollToBottom(behavior: ScrollBehavior = "smooth") {
     requestAnimationFrame(() => {
@@ -66,6 +72,9 @@ export function DigitalTwinChat() {
     setError(null);
     setIsLoading(true);
 
+    const controller = new AbortController();
+    abortRef.current = controller;
+
     try {
       const response = await fetch("/api/digital-twin", {
         method: "POST",
@@ -73,12 +82,13 @@ export function DigitalTwinChat() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ messages: nextMessages }),
+        signal: controller.signal,
       });
 
-      const data = (await response.json()) as { reply?: string; error?: string; detail?: string };
+      const data = (await response.json()) as { reply?: string; error?: string };
 
       if (!response.ok || !data.reply) {
-        throw new Error(data.detail || data.error || "Digital Twin 暂时不可用。");
+        throw new Error(data.error || "Digital Twin 暂时不可用。");
       }
 
       const updatedMessages = [
@@ -89,14 +99,20 @@ export function DigitalTwinChat() {
       messagesRef.current = updatedMessages;
       setMessages(updatedMessages);
     } catch (submitError) {
+      if (submitError instanceof Error && submitError.name === "AbortError") {
+        return;
+      }
       const message =
         submitError instanceof Error ? submitError.message : "发送失败，请稍后再试。";
       setError(message);
     } finally {
-      setIsLoading(false);
-      requestAnimationFrame(() => {
-        textareaRef.current?.focus();
-      });
+      if (abortRef.current === controller) {
+        abortRef.current = null;
+        setIsLoading(false);
+        requestAnimationFrame(() => {
+          textareaRef.current?.focus();
+        });
+      }
     }
   }
 
@@ -142,7 +158,12 @@ export function DigitalTwinChat() {
         ))}
       </div>
 
-      <div ref={viewportRef} className={styles.viewport}>
+      <div
+        ref={viewportRef}
+        className={styles.viewport}
+        aria-live="polite"
+        aria-busy={isLoading}
+      >
         {messages.map((message, index) => (
           <article
             key={`${message.role}-${index}`}
@@ -172,6 +193,7 @@ export function DigitalTwinChat() {
           onChange={(event) => setInput(event.target.value)}
           onKeyDown={(event) => void handleKeyDown(event)}
           placeholder="例如：请用招聘者能快速理解的方式介绍一下他的职业路径。"
+          aria-label="向数字分身提问"
           rows={4}
         />
         <div className={styles.footer}>
@@ -184,7 +206,11 @@ export function DigitalTwinChat() {
         </div>
       </form>
 
-      {error ? <p className={styles.error}>请求失败：{error}</p> : null}
+      {error ? (
+        <p className={styles.error} role="alert">
+          请求失败：{error}
+        </p>
+      ) : null}
     </div>
   );
 }

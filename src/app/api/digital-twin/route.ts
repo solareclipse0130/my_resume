@@ -23,46 +23,78 @@ const DIGITAL_TWIN_CONTEXT = `
 
 已知资料如下：
 - 姓名：黄若杰
-- 当前定位：数据分析与 AI 应用
+- 当前定位：AI 产品实习生 · 心理学（计算神经方向）硕士在读，主线是「心理学 × Agent 工程」
 - 城市：深圳，南山区
 - 邮箱：283646073@qq.com
-- 电话：+86 184 7229 0626
+- 电话：+86 184 8729 0626
+- GitHub：github.com/solareclipse0130
+- 求职方向：AI 产品实习（深圳）
+
+实习可用性（硬门槛）：
+- 即时到岗、深圳 onsite、每周 5 天、可持续 6 个月以上
 
 教育经历：
 - 北京林业大学，本科，园林，2016年9月 - 2020年7月
 - 深圳大学，硕士，心理学（计算神经科学方向），2024年9月 - 2027年7月
 
-职业与实践经历：
-- 深圳媚道风景园林与城市规划设计院有限公司，景观设计师，2020年7月 - 2021年1月
-- 广州市新东方无忧教育咨询有限公司，考研初试辅导，2024年6月 - 2025年5月
-- 四川晴天心研科技发展有限公司，心理学考研复试辅导，2025年1月 - 2026年3月
+一句话概括作品：1 段真实职场 AI 落地 + 1 个已上线产品 + 2 个获奖作品。
 
-能力与技能重点：
-- 科研数据分析建模与应用统计理论
-- 脑电信号处理：MNE-Python、Matlab、傅里叶变换、小波变换、ICA、ERP、时频分析
-- Python 数据分析：Pandas、NumPy、SciPy、Matplotlib
-- 深度学习基础与 PyTorch 实操
-- AI 工具深度使用：ChatGPT、Gemini、OpenClaw 等
-- 对大语言模型与 Agent 开发保持持续学习热情
-- 摄影、图片后期处理、视频剪辑，具备较强审美与表达能力
+AI 项目与经历（核心，共 4 个 + 1 个练习）：
+1. 其域创新 · AI 招聘提效实习（2026.05 - 2026.06，深圳，团队约 10 人）：独立设计并搭建一条生产级 AI 简历初筛自动化流水线，无人值守处理并评分 49 位真实候选人。Gmail 定时取件（cron，每 30 分钟）→ 附件去重解压 → ffmpeg 抽帧供模型识别 → Claude Code 为每位候选人并行 spawn 子代理评分 → 生成排行榜并飞书推送；做了 flock 单实例锁、Opus 用量限额自愈、候选人 PII 隔离。评分标准起点是同事给的岗位 JD，本人据业务对「偏平面却被打高分」候选人的否决反馈，迭代 7 维评分权重、新增硬规则修正打分偏差。
+2. inner_crew · 多智能体决策会议（阶跃星辰 Agent 黑客松 Track 02，30+ 参赛队 / 20+ 路演队中并列第五）：用 OpenAI Agents SDK 把 6 种两两对立的人格做成 6 个 Agent，编排「对峙—选边—裁决」三幕决策会议，前端流式呈现。产品与结构设计（对立轴、三幕流程、积分结算规则、让「计算师」先联网检索）由本人主导；服务端无状态、状态由前端持有。
+3. your_sequence · 情绪时间序列自我认知产品（已上线 yoursequence.xyz）：独立设计并上线的全栈 AI 产品，把情绪记录做成「日记 / 一句话 / 二维情绪格子 / 选择题 / 一个 tap」的降级输入阶梯，全部落到统一状态空间（愉悦 / 唤醒 / 波动 + 置信度）。有完整 PRD；关键产品决策（不补缺失值、无打卡 streak、自伤信号温和引导求助）体现对用户心理与真实使用门槛的把控。
+4. marketing_workshop · 电商内容生产线（阿里云百炼「一行指令挑战赛」潜力作品奖）：一句自然语言指令跑完文案 → 主图 → 海报 → 配音 → 图生视频 → ffmpeg 合成，90 分钟内交付 9:16 竖屏成片；用百炼 CLI 编排多模型 + 自定义 skill。
+5. HRJ_demo · 多智能体销售冷邮件（个人练习）：用 OpenAI Agents SDK 的 agents-as-tools 模式挂 3 个写手 Agent，配格式化 Agent 与 SendGrid 发信工具，加 input/output guardrails 与 trace。
 
-项目与研究方向：
-- 强迫症患者动机行为偏差的认知神经与计算机制研究：使用 MCMC 和贝叶斯认知计算模型量化决策偏差
-- 基于 EEG 与计算建模的内外源任务预测协同指导认知控制的时空动态机制研究：独立完成脑电与行为数据采集、清洗和分析
-- 25届心理学考研复试辅导：服务 3 名学生，全部成功上岸
-- 个人 AI 智能体 OpenClaw 的本地部署与应用框架探索：在 WSL 环境中完成开源 Agent 框架部署
+技能重点：
+- AI Agent 与编排（核心）：OpenAI Agents SDK（agents-as-tools / function_tool / guardrails / tracing）、Claude Code（Skills + Sub-agent 编排、cron 无人值守流水线）、阿里云百炼 CLI 多模型多模态编排
+- Vibe-coding 产品落地：用 Claude Code / Cursor / Codex 在 WSL / Linux 独立把 AI 产品做到上线
+- Python 数据建模：Pandas / NumPy / SciPy、贝叶斯认知建模（MCMC）
+- EEG 信号处理：MNE-Python、ICA、时频分析
+- 差异化：心理学 / 计算神经——用户状态与情绪测量、认知与动机机制、行为数据建模；以及来自设计训练的审美与信息编排
 
-个人叙事与定位补充：
-- 黄若杰的成长路径具有跨学科特征：从设计训练出发，逐步转向心理学、计算神经科学、数据分析与 AI 应用
-- 设计行业沉淀了他的审美、结构感和表达能力
-- 心理学与神经科学训练强化了研究严谨性、建模思维和对“人”的长期兴趣
-- AI 与 Agent 工具实践体现了他对新技术落地的持续关注
+真实性边界（非常重要，必须遵守，防止把分身讲成吹牛）：
+- 黄若杰是 vibe-coder：项目「独立完成」指的是没有队友分担 + 借助 AI 编程工具完成，不是亲手写框架、也不是框架精通。前后端、数据库、部署、ffmpeg、Vercel 等具体代码/命令都是在 AI 辅助下完成并跑通的。
+- 他能主导并讲清的是：产品与结构设计、Agent 编排（Agents SDK / Claude Code）、AI 招聘初筛流水线搭建与评分规则迭代。
+- 明确不系统掌握（不要吹）：FastAPI、TypeScript / Vite / canvas、RAG、Prompt 工程方法论、推理模型调优的系统方法。
+- 项目没有商业化 / 增长 / 收入等 KPI；用户调研与竞品分析经验较薄；除 UI 初筛评分迭代外没有系统化评测经验。
+- 黑客松项目是 3 人队，队友主要参与 UI 形式讨论，开发由本人完成。
 
 回答原则：
-- 可以帮助访问者理解“他适合做什么”“他的路径有什么独特之处”“他的研究和技术能力怎么结合”
-- 不要编造未写明的公司成就、论文发表、奖项、精确 KPI 或作品链接
-- 如果用户问作品集，可以说明作品集入口已预留，后续会扩展研究案例、数据项目、AI 实验和视觉作品
+- 可以帮助访问者理解「他适合做什么 AI 产品岗」「路径有什么独特之处」「心理学与 Agent 工程如何结合」。
+- 不要编造未写明的公司成就、论文发表、奖项、精确 KPI 或作品链接；不确定就说网站资料没写明。
+- 如果被追问技术细节而资料未覆盖，如实说「这部分我不能确认」，不要硬编。
 `.trim();
+
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 20;
+const MAX_MESSAGE_CHARS = 2000;
+const MAX_TOTAL_CHARS = 8000;
+const UPSTREAM_TIMEOUT_MS = 15_000;
+
+// 内存滑窗限流：按 IP 记录窗口内的请求时间戳。
+// 注意：Vercel 多实例下各实例独立计数，如需全局精确限流后续可换 Vercel KV / Upstash。
+const rateLimitStore = new Map<string, number[]>();
+
+function getClientId(request: Request): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  return forwarded?.split(",")[0]?.trim() || "unknown";
+}
+
+function isRateLimited(clientId: string): boolean {
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW_MS;
+  const hits = (rateLimitStore.get(clientId) ?? []).filter((ts) => ts > windowStart);
+
+  if (hits.length >= RATE_LIMIT_MAX) {
+    rateLimitStore.set(clientId, hits);
+    return true;
+  }
+
+  hits.push(now);
+  rateLimitStore.set(clientId, hits);
+  return false;
+}
 
 function normalizeMessages(input: unknown): ChatMessage[] {
   if (!Array.isArray(input)) {
@@ -96,20 +128,42 @@ export async function POST(request: Request) {
     );
   }
 
+  if (isRateLimited(getClientId(request))) {
+    return NextResponse.json(
+      { error: "请求过于频繁，请稍后再试。", code: "RATE_LIMITED" },
+      { status: 429 },
+    );
+  }
+
   let body: { messages?: ChatMessage[] };
 
   try {
     body = (await request.json()) as { messages?: ChatMessage[] };
   } catch {
-    return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
+    return NextResponse.json({ error: "Invalid JSON body.", code: "BAD_REQUEST" }, { status: 400 });
   }
 
   const messages = normalizeMessages(body.messages);
   const latestUserMessage = [...messages].reverse().find((message) => message.role === "user");
 
   if (!latestUserMessage) {
-    return NextResponse.json({ error: "A user message is required." }, { status: 400 });
+    return NextResponse.json(
+      { error: "A user message is required.", code: "BAD_REQUEST" },
+      { status: 400 },
+    );
   }
+
+  const totalChars = messages.reduce((sum, message) => sum + message.content.length, 0);
+
+  if (messages.some((message) => message.content.length > MAX_MESSAGE_CHARS) || totalChars > MAX_TOTAL_CHARS) {
+    return NextResponse.json(
+      { error: "消息内容过长，请精简后再试。", code: "PAYLOAD_TOO_LARGE" },
+      { status: 413 },
+    );
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), UPSTREAM_TIMEOUT_MS);
 
   try {
     const response = await fetch(AIHUBMIX_URL, {
@@ -130,16 +184,15 @@ export async function POST(request: Request) {
           ...messages,
         ],
       }),
+      signal: controller.signal,
     });
 
     if (!response.ok) {
       const errorText = await response.text();
+      console.error(`AIHubMix upstream ${response.status}: ${errorText.slice(0, 1200)}`);
 
       return NextResponse.json(
-        {
-          error: "AIHubMix request failed.",
-          detail: errorText.slice(0, 1200),
-        },
+        { error: "AI 服务暂时不可用，请稍后再试。", code: "UPSTREAM_ERROR" },
         { status: 502 },
       );
     }
@@ -156,16 +209,27 @@ export async function POST(request: Request) {
 
     if (!content) {
       return NextResponse.json(
-        { error: "The model returned an empty response." },
+        { error: "AI 返回了空回复，请稍后再试。", code: "EMPTY_RESPONSE" },
         { status: 502 },
       );
     }
 
     return NextResponse.json({ reply: content });
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Unexpected server error while calling AIHubMix.";
+    if (error instanceof Error && error.name === "AbortError") {
+      console.error("AIHubMix request timed out.");
+      return NextResponse.json(
+        { error: "AI 响应超时，请稍后再试。", code: "UPSTREAM_TIMEOUT" },
+        { status: 504 },
+      );
+    }
 
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error("Digital Twin route error:", error);
+    return NextResponse.json(
+      { error: "服务器开小差了，请稍后再试。", code: "INTERNAL_ERROR" },
+      { status: 500 },
+    );
+  } finally {
+    clearTimeout(timeout);
   }
 }
