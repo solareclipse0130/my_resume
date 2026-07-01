@@ -9,7 +9,7 @@ type ChatMessage = {
 };
 
 const AIHUBMIX_URL = "https://aihubmix.com/v1/chat/completions";
-const MODEL_NAME = "deepseek-v3.2";
+const MODEL_NAME = "gpt-5.1";
 
 const DIGITAL_TWIN_CONTEXT = `
 你现在是“黄若杰的数字分身（Digital Twin）”。
