@@ -3,9 +3,9 @@ import { DigitalTwinChat } from "@/components/DigitalTwinChat";
 import styles from "./page.module.css";
 
 const metrics = [
-  { value: "2", label: "学科主线", detail: "园林设计 × 心理学 / 计算神经科学" },
-  { value: "2023", label: "AI 原生起点", detail: "自 ChatGPT 时代开始持续构建 AI 工作流" },
-  { value: "3/3", label: "辅导成果", detail: "复试深度辅导学生全部成功上岸" },
+  { value: "4", label: "AI 项目", detail: "1 段职场落地 + 1 个上线 + 2 个获奖" },
+  { value: "49", label: "候选人评分", detail: "生产级 AI 初筛流水线无人值守处理" },
+  { value: "第 5", label: "黑客松名次", detail: "阶跃星辰 Agent 黑客松 30+ 队并列第五" },
 ];
 
 const journey = [
@@ -13,106 +13,110 @@ const journey = [
     year: "2016 — 2020",
     title: "北京林业大学 · 园林学士",
     body:
-      "在空间、审美与秩序的训练中建立了对结构、叙事和视觉表达的长期敏感度，也为之后的设计判断与内容呈现打下底层能力。",
+      "在空间、审美与秩序的训练中建立了对结构、叙事与视觉表达的长期敏感度，为之后的产品设计判断与信息编排打下底层能力。",
   },
   {
     year: "2020 — 2021",
     title: "景观设计师 · 深圳媚道风景园林与城市规划设计院",
     body:
-      "进入真实项目环境，理解专业交付、团队协作与高标准表达。在这段经历里，设计训练进一步沉淀为对细节和成品质量的要求。",
-  },
-  {
-    year: "2023 — 至今",
-    title: "AI 工具深度使用者",
-    body:
-      "从 ChatGPT 开始，将大语言模型逐步整合进学习、科研、分析和日常工作流中，持续关注 Agent、自动化与 AI 落地的真实价值。",
+      "进入真实项目环境，理解专业交付、团队协作与成品质量标准——设计训练进一步沉淀为对细节和交付质量的要求。",
   },
   {
     year: "2024 — 2027",
     title: "深圳大学 · 心理学硕士（计算神经科学方向）",
     body:
-      "把对“人”与“决策”的兴趣转化为科学研究路径，系统进入行为数据、脑电数据、统计建模与认知神经机制分析的训练。",
-  },
-  {
-    year: "2024 — 2026",
-    title: "研究生考试辅导与知识传递",
-    body:
-      "先后参与初试与复试辅导，不依赖模板化路径，而是围绕候选人的兴趣、经历和优势做个性化表达策略设计，帮助学生放大不可替代性。",
+      "系统进入行为数据、脑电数据、统计建模与认知神经机制分析的训练，把对“人”与“决策”的兴趣转化为可建模、可验证的研究方法。",
   },
   {
     year: "2025 — 2026",
-    title: "研究与应用并进",
+    title: "独立交付 4 个 AI Agent 产品（含上线 / 获奖）",
     body:
-      "围绕 OCD 动机行为偏差、EEG 任务预测与认知控制机制、个人 Agent 部署等主题推进项目，把科研分析、技术试验与落地实践连成一条线。",
+      "用 OpenAI Agents SDK / Claude Code 等 AI 编程工具，独立把想法做成产品：inner_crew 黑客松并列第五、your_sequence 已上线、marketing_workshop 获百炼潜力作品奖。",
+  },
+  {
+    year: "2026.05 — 06",
+    title: "其域创新 · AI 招聘提效实习",
+    body:
+      "独立搭建一条生产级 AI 简历初筛自动化流水线，无人值守处理并评分 49 位真实候选人，并据业务 bad case 迭代评分规则。",
   },
 ];
 
-const projects = [
+const projects: {
+  tag: string;
+  title: string;
+  summary: string;
+  link?: string;
+  linkLabel?: string;
+}[] = [
   {
-    tag: "认知计算建模",
-    title: "强迫症患者动机行为偏差研究",
+    tag: "职场落地",
+    title: "其域创新 · AI 招聘提效",
     summary:
-      "面向复杂行为数据与脑电数据，使用 MCMC 方法构建贝叶斯认知计算模型，量化患者在动机行为中的决策偏差。",
+      "独立设计并搭建生产级 AI 简历初筛流水线，无人值守评分 49 位候选人：Claude Code 子代理并行评分 + cron 定时取件 + Opus 限额自愈，并据业务 bad case 迭代 7 维评分规则。",
   },
   {
-    tag: "脑电数据分析",
-    title: "EEG 与认知控制时空动态机制",
+    tag: "获奖作品 · 黑客松并列第五",
+    title: "inner_crew · 多智能体决策会议",
     summary:
-      "基于 MNE-Python 独立完成被试脑电与行为数据采集、清洗与分析，结合 ICA、时频分析与 ERP 研究协同脑区机制。",
+      "用 OpenAI Agents SDK 把 6 种对立人格做成 6 个 Agent，编排「对峙—选边—裁决」三幕决策会议。产品与结构设计由本人主导，服务端无状态、状态由前端持有。",
+    link: "https://github.com/solareclipse0130",
+    linkLabel: "GitHub",
   },
   {
-    tag: "知识传递",
-    title: "心理学复试深度辅导",
+    tag: "已上线",
+    title: "your_sequence · 情绪时间序列产品",
     summary:
-      "服务 3 位考生，围绕个人优势、兴趣轨迹与面试表达做定制化策略设计，最终实现 3 位考生全部上岸。",
+      "独立设计并上线的全栈 AI 产品：把情绪记录做成降级输入阶梯，全部落到统一状态空间；有完整 PRD，关键产品决策体现对用户心理与真实使用门槛的把控。",
+    link: "https://yoursequence.xyz",
+    linkLabel: "访问",
   },
   {
-    tag: "Agent 落地",
-    title: "OpenClaw 本地部署与应用探索",
+    tag: "获奖作品",
+    title: "marketing_workshop · 电商内容生产线",
     summary:
-      "在 WSL 环境中从零完成开源 Agent 框架的本地部署与环境配置，探索 LLM 在科研分析场景中的真实落地方式。",
+      "一句自然语言指令跑完整条电商内容生产线：文案 → 主图 → 海报 → 配音 → 图生视频 → 合成，90 分钟内交付竖屏成片。阿里云百炼「一行指令挑战赛」潜力作品奖。",
   },
 ];
 
 const capabilityGroups = [
   {
-    title: "Data & Statistics",
+    title: "AI Agent 与编排（核心）",
     items: [
-      "相关分析、卡方检验、t 检验、方差分析",
-      "描述统计与科研向可视化表达",
-      "Pandas / NumPy / SciPy 数据流程",
+      "OpenAI Agents SDK：agents-as-tools / function_tool / guardrails / tracing",
+      "Claude Code：Skills + Sub-agent 编排、cron 无人值守流水线",
+      "阿里云百炼 CLI：多模型 / 多模态工作流编排",
     ],
   },
   {
-    title: "Neuroscience & EEG",
+    title: "Vibe-coding 产品落地",
     items: [
-      "MNE-Python / Matlab 脑电预处理与分析",
-      "傅里叶变换、小波变换、ICA 伪迹去除",
-      "ERP 与时频分析的研究应用",
+      "用 Claude Code / Cursor / Codex 在 WSL / Linux 独立把 AI 产品做到上线",
+      "前后端、数据库、部署等具体实现借助 AI 完成并跑通",
+      "习惯在 bad case 里一轮轮迭代，先定位根因再修",
     ],
   },
   {
-    title: "AI & Engineering Curiosity",
+    title: "Data & Neuroscience",
     items: [
-      "ChatGPT、Gemini、OpenClaw 等工具深度实践",
-      "理解深度学习基础原理与 PyTorch 实操",
-      "对 LLM 与 Agent 开发保持持续学习热情",
+      "Python 数据建模：Pandas / NumPy / SciPy",
+      "贝叶斯认知建模（MCMC）与统计分析",
+      "EEG 信号处理：MNE-Python、ICA、时频分析",
     ],
   },
   {
-    title: "Visual & Narrative Taste",
+    title: "差异化 · 心理学 / 计算神经",
     items: [
-      "摄影、图片后期与视频剪辑",
-      "来自设计行业训练的审美与信息编排能力",
-      "能把复杂内容组织成更清晰、更有说服力的表达",
+      "用户状态与情绪测量、认知与动机机制",
+      "行为数据建模与实验设计",
+      "来自设计训练的审美与信息编排能力",
     ],
   },
 ];
 
 const principles = [
-  "把复杂问题拆成结构化、可验证、可表达的分析对象。",
-  "既尊重学术严谨，也相信技术最终要服务真实场景。",
-  "在专业感之上保留锋芒，持续寻找跨学科的连接点。",
+  "先定位根因、用 bad case 驱动迭代，而不是靠猜。",
+  "既懂模型的能力边界，也懂人的状态与动机——两头都要落进产品。",
+  "用 AI 编程工具把想法快速 ship 成能跑、能用的东西。",
 ];
 
 export default function Home() {
@@ -141,15 +145,15 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <p className={styles.sectionEyebrow}>Data Analysis / AI Application / Cognitive Science</p>
+            <p className={styles.sectionEyebrow}>AI Product · Psychology × Agent Engineering</p>
             <h1 className={styles.heroTitle}>
-              一个正在把
-              <span>研究能力、技术热情与表达审美</span>
-              融成同一种专业能力的人。
+              用
+              <span>心理学 × Agent 工程</span>
+              ，把 AI 产品从想法独立做到上线。
             </h1>
             <p className={styles.heroDescription}>
-              我目前聚焦数据分析、AI 应用与计算神经科学。我的路径并不单线：从园林设计出发，走进心理学研究，再向
-              AI 与 Agent 的真实落地靠近。我希望做的不只是“会工具”，而是把复杂问题看清、拆解、建模，并最终交付成可信的成果。
+              心理学（计算神经方向）硕士在读。近一年，我把这份对人的理解落进了 AI 产品：1 段真实职场 AI 落地、1
+              个已上线产品、2 个获奖作品——能用 AI 编程工具独立把想法做成产品，既懂模型的能力边界，也懂人的状态与动机。
             </p>
 
             <div className={styles.heroActions}>
@@ -177,10 +181,10 @@ export default function Home() {
 
           <aside className={styles.heroPanel}>
             <div className={styles.panelBadge}>Current Positioning</div>
-            <h2>数据分析与 AI 应用</h2>
+            <h2>AI 产品实习生 · 心理学 × Agent 工程</h2>
             <p>
-              以心理学与计算神经科学为研究主轴，同时持续把统计建模、脑电数据分析、LLM
-              工具链与个人工作流整合到同一套专业体系中。
+              以心理学 / 计算神经为交叉视角、工程落地为支撑：能编排多智能体、能用 AI 编程工具独立把产品做到上线，也能从
+              bad case 里迭代出更靠谱的评分与体验。
             </p>
 
             <dl className={styles.identityList}>
@@ -193,7 +197,7 @@ export default function Home() {
               <div>
                 <dt>电话</dt>
                 <dd>
-                  <a href="tel:+8618472290626">+86 184 8729 0626</a>
+                  <a href="tel:+8618487290626">+86 184 8729 0626</a>
                 </dd>
               </div>
               <div>
@@ -268,6 +272,16 @@ export default function Home() {
                 <span>{project.tag}</span>
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
+                {project.link ? (
+                  <a
+                    className={styles.projectLink}
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.linkLabel} ↗
+                  </a>
+                ) : null}
               </article>
             ))}
           </div>
@@ -318,7 +332,7 @@ export default function Home() {
           <div className={styles.portfolioPanel}>
             <p className={styles.portfolioLabel}>Next Step</p>
             <h3>Portfolio / Coming Soon</h3>
-            <p>准备承接科研案例、数据项目、AI 实验、视觉作品与更完整的个人叙事。</p>
+            <p>准备承接 AI 产品案例、Agent 项目拆解、上线复盘与更完整的个人叙事。</p>
             <Link className={styles.primaryAction} href="/portfolio">
               打开作品集预留页
             </Link>
@@ -328,14 +342,14 @@ export default function Home() {
         <section className={styles.contactSection}>
           <div>
             <p className={styles.sectionEyebrow}>Contact</p>
-            <h2>如果你正在寻找一个兼具分析、审美与学习能力的人。</h2>
+            <h2>如果你在找一个能把想法独立做成 AI 产品的人。</h2>
             <p>
-              欢迎联系我。无论是研究、数据分析、AI 应用探索，还是需要高质量表达与结构化思考的工作，我都很期待参与其中。
+              欢迎联系我。无论是 AI 产品、Agent 编排、AI 提效自动化，还是需要心理学视角的陪伴 / 情绪类产品，我都很期待参与其中。
             </p>
           </div>
           <div className={styles.contactLinks}>
             <a href="mailto:283646073@qq.com">283646073@qq.com</a>
-            <a href="tel:+8618472290626">+86 184 8729 0626</a>
+            <a href="tel:+8618487290626">+86 184 8729 0626</a>
             <a href="/resume.pdf" target="_blank" rel="noreferrer">
               下载简历
             </a>

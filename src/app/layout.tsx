@@ -10,17 +10,18 @@ const spaceGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "黄若杰 | 数据分析与 AI 应用",
+  title: "黄若杰 | AI 产品实习生 · 心理学 × Agent 工程",
   description:
-    "黄若杰的个人专业网站，聚焦数据分析、AI 应用、计算神经科学、脑电数据研究与跨学科项目实践。",
+    "黄若杰的个人专业网站：AI 产品实习生，心理学（计算神经方向）硕士在读。1 段真实职场 AI 落地 + 1 个已上线产品 + 2 个获奖作品，能用 AI 编程工具独立把想法做到上线，并可与站内数字分身对话。",
   keywords: [
     "黄若杰",
-    "数据分析",
-    "AI 应用",
-    "计算神经科学",
+    "AI 产品",
+    "AI 产品实习",
+    "Agent 工程",
+    "多智能体",
+    "OpenAI Agents SDK",
     "心理学",
-    "EEG",
-    "MNE-Python",
+    "计算神经科学",
   ],
 };
 
