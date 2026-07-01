@@ -59,7 +59,7 @@ const projects: {
     title: "inner_crew · 多智能体决策会议",
     summary:
       "用 OpenAI Agents SDK 把 6 种对立人格做成 6 个 Agent，编排「对峙—选边—裁决」三幕决策会议。产品与结构设计由本人主导，服务端无状态、状态由前端持有。",
-    link: "https://github.com/solareclipse0130",
+    link: "https://github.com/solareclipse0130/inner_crew",
     linkLabel: "GitHub",
   },
   {
@@ -75,6 +75,8 @@ const projects: {
     title: "marketing_workshop · 电商内容生产线",
     summary:
       "一句自然语言指令跑完整条电商内容生产线：文案 → 主图 → 海报 → 配音 → 图生视频 → 合成，90 分钟内交付竖屏成片。阿里云百炼「一行指令挑战赛」潜力作品奖。",
+    link: "https://github.com/solareclipse0130/marketing_workshop",
+    linkLabel: "GitHub",
   },
 ];
 
