@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 
 const metrics = [
   { value: "4", label: "AI 项目", detail: "1 段职场落地 + 1 个上线 + 2 个获奖" },
-  { value: "49", label: "候选人评分", detail: "生产级 AI 初筛流水线无人值守处理" },
+  { value: "67", label: "候选人评分", detail: "生产级 AI 初筛流水线无人值守处理" },
   { value: "第 5", label: "黑客松名次", detail: "阶跃星辰 Agent 黑客松 30+ 队并列第五" },
 ];
 
@@ -37,7 +37,7 @@ const journey = [
     year: "2026.05 — 06",
     title: "其域创新 · AI 招聘提效实习",
     body:
-      "独立搭建一条生产级 AI 简历初筛自动化流水线，无人值守处理并评分 49 位真实候选人，并据业务 bad case 迭代评分规则。",
+      "独立搭建一条生产级 AI 简历初筛自动化流水线，无人值守处理并评分 67 位真实候选人，并据业务 bad case 迭代评分规则。",
   },
 ];
 
@@ -52,7 +52,7 @@ const projects: {
     tag: "职场落地",
     title: "其域创新 · AI 招聘提效",
     summary:
-      "独立设计并搭建生产级 AI 简历初筛流水线，无人值守评分 49 位候选人：Claude Code 子代理并行评分 + cron 定时取件 + Opus 限额自愈，并据业务 bad case 迭代 7 维评分规则。",
+      "独立设计并搭建生产级 AI 简历初筛流水线，无人值守评分 67 位候选人：Claude Code 子代理并行评分 + cron 定时取件 + Opus 限额自愈，并据业务 bad case 迭代 7 维评分规则。",
   },
   {
     tag: "获奖作品 · 黑客松并列第五",
